@@ -1,10 +1,12 @@
-const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/EReS',(err)=> {
-    if(!err)
-        console.log('Database connection successful');
-    else
-        console.log('Database connection error :' + JSON.stringify(err,undefined,2));
-});
 
-module.exports = mongoose;
+module.exports = {
+    "database" : "mongodb://localhost:27017/Test",
+    "secret" : "myapplicaionsecretkey",
+}
+//databese connected to the mongo atlas server
+// module.exports = {
+//     "database" : "mongodb+srv://sachin:sachin21@@ehven-fm9lu.gcp.mongodb.net/easycode?retryWrites=true&w=majority",
+//     "secret" : "myapplicaionsecretkey",
+// }
+
