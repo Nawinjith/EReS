@@ -10,7 +10,7 @@ const fs = require('fs');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'local_storage/profile_Images/')    //user profile pictures saving destination folder
+        cb(null, 'local_storage/profile_Images/')    //profile pictures of users
     },
     filename: function (req, file, cb) {
         cb(null, file.originalname)   //set the file neme
@@ -26,17 +26,17 @@ router.post("/login", function (req, res, next) {
     const password = req.body.password;
     User.findByUserid(userid, function (err, user) {    //user first find by userid
         if (err) throw err;
-        if (!user) {    //if there is not user in same userid
-            res.json({ state: false, msg: "No user found..!" });   //the response error
+        if (!user) {    //user not found
+            res.json({ state: false, msg: "No user found..!" });   
             return;
         }
-        User.passwordCheck(password, user.password, function (err, match) { //if has a user the check the user psssword calling passwordCkech function
+        User.passwordCheck(password, user.password, function (err, match) { 
             if (err) {
                 throw err;
             }
 
             if (match) {    //if userid and password matched
-                console.log("Userid and Password match!");
+                console.log("Login Successful");
                 // const token = jwt.sign(user.toJSON(), config.secret, { expiresIn: 86400 });
 
                 res.json({
@@ -91,7 +91,7 @@ router.post("/register", function (req, res) {
         });
 
         bcrypt.genSalt(10, function (err, salt) {   //generate password salt
-            bcrypt.hash(newUser.password, salt, function (err, hash) {  //hach the password 
+            bcrypt.hash(newUser.password, salt, function (err, hash) {  //hash the password 
                 newUser.password = hash;
 
                 if (err) {
