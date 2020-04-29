@@ -22,9 +22,11 @@ const upload = multer({ storage: storage }).single('profileImage');
 //user login
 
 router.post("/login", function (req, res, next) {
+    
     const userid = req.body.userid;
     const password = req.body.password;
     User.findByUserid(userid, function (err, user) {    //user first find by userid
+        
         if (err) throw err;
         if (!user) {    //user not found
             res.json({ state: false, msg: "No user found..!" });   
