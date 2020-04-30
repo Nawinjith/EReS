@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatSnackBarModule} from '@angular/material';
 
 
 
@@ -16,7 +16,6 @@ import {
   MatListModule ,
   MatStepperModule,
   MatInputModule,
-  MatSnackBarModule,
 
 } from '@angular/material';
 
@@ -29,7 +28,6 @@ import { NavComponent } from './Auth/nav/nav.component';
 import { UserlandingComponent } from './userlanding/userlanding.component';
 import { SidebarComponent } from './Auth/sidebar/sidebar.component';
 import { FooterComponent } from './Auth/footer/footer.component';
-
 
 
 @NgModule({
@@ -55,12 +53,9 @@ import { FooterComponent } from './Auth/footer/footer.component';
     MatListModule,
     MatStepperModule,
     MatInputModule,
-    MatSnackBarModule,
-    FlexLayoutModule,
+    MatSnackBarModule
   ],
   providers: [],
-  bootstrap: [
-    AppComponent
-  ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
