@@ -23,22 +23,22 @@ import {
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Auth/login/login.component';
-import { HomeComponent } from './home/home.component';
 import { NavComponent } from './Auth/nav/nav.component';
-import { UserlandingComponent } from './userlanding/userlanding.component';
 import { SidebarComponent } from './Auth/sidebar/sidebar.component';
 import { FooterComponent } from './Auth/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { UserlandingComponent } from './components/userlanding/userlanding.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
     NavComponent,
-    UserlandingComponent,
     SidebarComponent,
     FooterComponent,
+    HomeComponent,
+    UserlandingComponent,
   ],
   imports: [
     BrowserModule,
